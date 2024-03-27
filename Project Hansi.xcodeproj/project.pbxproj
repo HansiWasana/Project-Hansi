@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		256493132BB2A96B003E9FEA /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256493122BB2A96B003E9FEA /* CartManager.swift */; };
-		256493172BB2A9AF003E9FEA /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256493162BB2A9AF003E9FEA /* Home.swift */; };
-		256493192BB2A9C2003E9FEA /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256493182BB2A9C2003E9FEA /* CollectionView.swift */; };
-		2564931B2BB2A9CD003E9FEA /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2564931A2BB2A9CD003E9FEA /* CartView.swift */; };
-		2564931F2BB2AA28003E9FEA /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2564931E2BB2AA28003E9FEA /* CategoryModel.swift */; };
-		256493212BB2AA3D003E9FEA /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256493202BB2AA3D003E9FEA /* ProductModel.swift */; };
+		2502295B2BB3DDE400C2906C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502295A2BB3DDE400C2906C /* Constants.swift */; };
+		2502295D2BB3DDF200C2906C /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502295C2BB3DDF200C2906C /* Enums.swift */; };
+		250229612BB3DE7100C2906C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250229602BB3DE7100C2906C /* HomeView.swift */; };
+		250229632BB3DF4600C2906C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250229622BB3DF4600C2906C /* HeaderView.swift */; };
+		250229652BB3E4BC00C2906C /* typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250229642BB3E4BC00C2906C /* typealiases.swift */; };
+		250229692BB40DE900C2906C /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250229682BB40DE900C2906C /* Color+Extensions.swift */; };
+		2502296B2BB4134D00C2906C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502296A2BB4134D00C2906C /* Product.swift */; };
+		2502296D2BB4193900C2906C /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502296C2BB4193900C2906C /* CategoryView.swift */; };
+		2502296F2BB41B2600C2906C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502296E2BB41B2600C2906C /* ContentView.swift */; };
+		250229712BB4233B00C2906C /* ProductIteamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250229702BB4233B00C2906C /* ProductIteamView.swift */; };
 		90B7C66F2BA8052F00CE7D88 /* Project_HansiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B7C66E2BA8052F00CE7D88 /* Project_HansiApp.swift */; };
-		90B7C6712BA8052F00CE7D88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B7C6702BA8052F00CE7D88 /* ContentView.swift */; };
 		90B7C6732BA8053000CE7D88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B7C6722BA8053000CE7D88 /* Assets.xcassets */; };
 		90B7C6762BA8053000CE7D88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B7C6752BA8053000CE7D88 /* Preview Assets.xcassets */; };
 		90B7C6802BA8053000CE7D88 /* Project_HansiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B7C67F2BA8053000CE7D88 /* Project_HansiTests.swift */; };
@@ -40,15 +43,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		256493122BB2A96B003E9FEA /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
-		256493162BB2A9AF003E9FEA /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		256493182BB2A9C2003E9FEA /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
-		2564931A2BB2A9CD003E9FEA /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
-		2564931E2BB2AA28003E9FEA /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
-		256493202BB2AA3D003E9FEA /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		2502295A2BB3DDE400C2906C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2502295C2BB3DDF200C2906C /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		250229602BB3DE7100C2906C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		250229622BB3DF4600C2906C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		250229642BB3E4BC00C2906C /* typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = typealiases.swift; sourceTree = "<group>"; };
+		250229682BB40DE900C2906C /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		2502296A2BB4134D00C2906C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		2502296C2BB4193900C2906C /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		2502296E2BB41B2600C2906C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		250229702BB4233B00C2906C /* ProductIteamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIteamView.swift; sourceTree = "<group>"; };
 		90B7C66B2BA8052F00CE7D88 /* Project Hansi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Hansi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B7C66E2BA8052F00CE7D88 /* Project_HansiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_HansiApp.swift; sourceTree = "<group>"; };
-		90B7C6702BA8052F00CE7D88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		90B7C6722BA8053000CE7D88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90B7C6752BA8053000CE7D88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		90B7C67B2BA8053000CE7D88 /* Project HansiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project HansiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,23 +89,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		256493152BB2A98F003E9FEA /* View */ = {
+		250229532BB3DD1600C2906C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				256493162BB2A9AF003E9FEA /* Home.swift */,
-				256493182BB2A9C2003E9FEA /* CollectionView.swift */,
-				2564931A2BB2A9CD003E9FEA /* CartView.swift */,
 			);
-			path = View;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		2564931D2BB2A9F0003E9FEA /* Model */ = {
+		250229542BB3DD3300C2906C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2564931E2BB2AA28003E9FEA /* CategoryModel.swift */,
-				256493202BB2AA3D003E9FEA /* ProductModel.swift */,
+				2502295F2BB3DE3F00C2906C /* MainViews */,
+				2502295E2BB3DE2300C2906C /* SupportingViews */,
 			);
-			path = Model;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		250229552BB3DD5800C2906C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2502296A2BB4134D00C2906C /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		250229562BB3DD6200C2906C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				250229672BB40DCE00C2906C /* Extensions */,
+				2502295A2BB3DDE400C2906C /* Constants.swift */,
+				2502295C2BB3DDF200C2906C /* Enums.swift */,
+				250229642BB3E4BC00C2906C /* typealiases.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		250229572BB3DD7300C2906C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				90B7C66E2BA8052F00CE7D88 /* Project_HansiApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		2502295E2BB3DE2300C2906C /* SupportingViews */ = {
+			isa = PBXGroup;
+			children = (
+				250229622BB3DF4600C2906C /* HeaderView.swift */,
+				2502296C2BB4193900C2906C /* CategoryView.swift */,
+				250229702BB4233B00C2906C /* ProductIteamView.swift */,
+			);
+			path = SupportingViews;
+			sourceTree = "<group>";
+		};
+		2502295F2BB3DE3F00C2906C /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				250229602BB3DE7100C2906C /* HomeView.swift */,
+			);
+			path = MainViews;
+			sourceTree = "<group>";
+		};
+		250229672BB40DCE00C2906C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				250229682BB40DE900C2906C /* Color+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		90B7C6622BA8052F00CE7D88 = {
@@ -125,12 +181,13 @@
 		90B7C66D2BA8052F00CE7D88 /* Project Hansi */ = {
 			isa = PBXGroup;
 			children = (
-				90B7C66E2BA8052F00CE7D88 /* Project_HansiApp.swift */,
-				90B7C6702BA8052F00CE7D88 /* ContentView.swift */,
-				256493122BB2A96B003E9FEA /* CartManager.swift */,
-				256493152BB2A98F003E9FEA /* View */,
-				2564931D2BB2A9F0003E9FEA /* Model */,
+				250229572BB3DD7300C2906C /* Application */,
+				250229562BB3DD6200C2906C /* Support */,
+				250229552BB3DD5800C2906C /* Models */,
+				250229542BB3DD3300C2906C /* Views */,
+				250229532BB3DD1600C2906C /* ViewModels */,
 				90B7C6722BA8053000CE7D88 /* Assets.xcassets */,
+				2502296E2BB41B2600C2906C /* ContentView.swift */,
 				90B7C6742BA8053000CE7D88 /* Preview Content */,
 			);
 			path = "Project Hansi";
@@ -291,14 +348,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2564931B2BB2A9CD003E9FEA /* CartView.swift in Sources */,
-				90B7C6712BA8052F00CE7D88 /* ContentView.swift in Sources */,
-				256493192BB2A9C2003E9FEA /* CollectionView.swift in Sources */,
-				256493132BB2A96B003E9FEA /* CartManager.swift in Sources */,
-				2564931F2BB2AA28003E9FEA /* CategoryModel.swift in Sources */,
-				256493172BB2A9AF003E9FEA /* Home.swift in Sources */,
+				250229632BB3DF4600C2906C /* HeaderView.swift in Sources */,
+				2502296B2BB4134D00C2906C /* Product.swift in Sources */,
 				90B7C66F2BA8052F00CE7D88 /* Project_HansiApp.swift in Sources */,
-				256493212BB2AA3D003E9FEA /* ProductModel.swift in Sources */,
+				2502296D2BB4193900C2906C /* CategoryView.swift in Sources */,
+				250229712BB4233B00C2906C /* ProductIteamView.swift in Sources */,
+				250229692BB40DE900C2906C /* Color+Extensions.swift in Sources */,
+				2502295D2BB3DDF200C2906C /* Enums.swift in Sources */,
+				2502296F2BB41B2600C2906C /* ContentView.swift in Sources */,
+				250229652BB3E4BC00C2906C /* typealiases.swift in Sources */,
+				250229612BB3DE7100C2906C /* HomeView.swift in Sources */,
+				2502295B2BB3DDE400C2906C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
