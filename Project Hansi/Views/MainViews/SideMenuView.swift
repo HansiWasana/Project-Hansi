@@ -32,7 +32,7 @@ struct SideMenuViewTemp_Previews: PreviewProvider {
 struct SideMenuViewContents: View {
     @Binding var presenSideMenu:Bool
     
-    var categories = [Categories.All.rawValue, Categories.Appareal.rawValue, Categories.Dress.rawValue, Categories.TShirt.rawValue]
+    var categories = [Categories.All.rawValue, Categories.Appareal.rawValue, Categories.Dress.rawValue, Categories.TShirt.rawValue ,Categories.Bag.rawValue]
     
     @State private var selectedCategory : Int = 0
     
@@ -42,9 +42,73 @@ struct SideMenuViewContents: View {
                 VStack(alignment: .leading) {
                     SideMenuTopView()
                     HStack(spacing: 10) {
+                        GenderView(isSelected: selectedCategory == 0, title: "WOMEN")
+                        .onTapGesture {
+                            selectedCategory = 0
+                        }
+                        GenderView(isSelected: selectedCategory == 1, title:  "MEN")
+                            .onTapGesture {
+                                selectedCategory = 1
+                            }
+                        GenderView(isSelected:  selectedCategory == 2, title: "KIDS")
+                            .onTapGesture {
+                                selectedCategory = 2
+                            }
                         
                     }
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    
+                    ForEach(0..<categories.count ,id:\.self){ i in
+                        CategoryItem(title: categories[i] ){
+                            
+                        }
+                    }
                     Spacer()
+                    
+                    Button {
+                        
+                    }label: {
+                        HStack{
+                            Image("cell")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width:  24, height: 24)
+                            Text("(7749) XXX-8755")
+                                .font(Font.custom("Tenor Sans", size: 16))
+                                .foregroundColor(.black)
+                            
+                               
+                        }
+                        .padding(.leading, 30)
+                        .padding(.top ,20)
+                    }
+                    
+                    Button {
+                        
+                    }label: {
+                        HStack{
+                            Image("Location")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width:  24, height: 24)
+                            Text("Store locator")
+                                .font(Font.custom("Tenor Sans", size: 16))
+                                .foregroundColor(.black)
+                            
+                               
+                        }
+                        .padding(.leading, 30)
+                        .padding(.top ,20)
+                    }
+                    
+                    VStack(alignment: .center) {
+                        Image("Divider")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 140)
+                            .padding(.top, 10)
+
+                    }
                 }
             }
             
@@ -71,5 +135,22 @@ struct SideMenuViewContents: View {
             .padding(.top, 40)
             .padding(.bottom, 30)
         }
+    
+    @ViewBuilder
+    func  CategoryItem(title: String, action: @escaping (() -> Void)) ->
+    some View {
+        Button {
+            action()
+        }label: {
+            VStack(alignment: .leading) {
+                Text(title)
+                    .font(Font.custom("Tenor Sans", size: 16))
+                    .foregroundColor(.black)
+            }
+        }
+        .frame(height: 50)
+        .padding(.leading, 30)
+        .padding(.top, 10)
     }
+}
 
