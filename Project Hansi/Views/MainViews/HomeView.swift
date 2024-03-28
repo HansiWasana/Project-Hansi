@@ -21,6 +21,14 @@ struct HomeView: View {
                     ScrollView (.vertical){
                         HeroImageView()
                         NewArrivalView()
+                        Image("Brand")
+                            .resizable()
+                            .frame(height:  145, alignment: .top)
+                            .aspectRatio(contentMode: .fit)
+                        CollectionView()
+                        
+                        //Spacer()
+                        
                     }
                     .edgesIgnoringSafeArea(.all)
                     
@@ -31,11 +39,7 @@ struct HomeView: View {
             .frame(maxWidth:  .infinity, maxHeight: .infinity)
             .overlay(alignment: .top)
             {
-                HeaderView {
-                    
-                } cartAction: {
-                    
-                }
+                
                 
             }
         }
@@ -75,11 +79,11 @@ struct HomeView: View {
             .foregroundColor(.black)
             .frame(width: 225, height: 32, alignment: .top)
             .padding(.top, 5)
-        
+            
         VStack{
             HStack(spacing: 20) {
                 ForEach(0..<categories.count, id: \.self) { i in
-                   CategoryView(isSelected: i == selectedCatergory, title: categories[i])
+                    CategoryView(isSelected: i == selectedCatergory, title: categories[i])
                         .onTapGesture {
                             selectedCatergory = i
                         }
@@ -92,17 +96,61 @@ struct HomeView: View {
                 ProductIteamView(product: product1)
                 ProductIteamView(product: product2)
             }
+            
             HStack{
                 ProductIteamView(product: product3)
                 ProductIteamView(product: product4)
             }
             
+            Button{
+                
+            }label: {
+                HStack(
+                    alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 18) {
+                        Text("Explore More")
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color.black)
+                           // .font(tenorsans(10))
+                        
+                        Image(systemName: "arrow.forward")
+                            .frame(width: 18, height: 18)
+                            .foregroundColor(Color.black)
+                }
+                                
+            }
+            .tint(Color.BodyGrey)
+            .padding(18)
         }
+        
         
     }
     
     @ViewBuilder
     private func CollectionView()-> some View {
+         Text("C o l l e t i o n s")
+            .font(Font.custom("Tenor Sans", size: 20))
+            .foregroundColor(Color.black)
+            
+        Image("Collections 1")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width:  150, height: 200)
+            .cornerRadius(8)
+            .shadow(radius: 1)
+            .clipped()
+        
+        
+        
+        Image("Collections 2")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width:  150, height: 200)
+            .cornerRadius(8)
+            .shadow(radius: 1)
+            .clipped()
+        
+        
+        
         
     }
     
@@ -122,3 +170,4 @@ struct HomeView_Preview: PreviewProvider {
         HomeView()
     }
 }
+

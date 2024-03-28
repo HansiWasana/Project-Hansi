@@ -20,7 +20,7 @@ struct CategoryView: View {
             if isSelected {
                 Rectangle ()
                     .foregroundColor(Color.Default)
-                    .frame(width: 5, height: 45)
+                    .frame(width: 5, height: 5)
                     .rotationEffect(Angle(degrees: 45))
                 
                 

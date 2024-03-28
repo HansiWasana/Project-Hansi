@@ -20,8 +20,8 @@ struct ProductIteamView: View {
                     Image(product.images[0])
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width:  260, height: 220)
-                        .cornerRadius(5)
+                        .frame(width:  150, height: 200)
+                        .cornerRadius(8)
                         .shadow(radius: 1)
                     
                     Text(product.title)
