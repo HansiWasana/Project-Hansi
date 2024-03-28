@@ -101,15 +101,36 @@ struct SideMenuViewContents: View {
                         .padding(.top ,20)
                     }
                     
-                    VStack(alignment: .center) {
-                        Image("Divider")
+                    Rectangle()
+                        .foregroundColor(Color.gray)
+                        .frame(width:  300, height: 0.5)
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .padding(.top, 20)
+                    
+                    HStack(spacing: 30) {
+                        
+                        Spacer()
+                        Image("Twitter")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 140)
-                            .padding(.top, 10)
+                            .frame(width:  24, height: 24)
+                        Image("Youtube")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width:  24, height: 24)
+                        Image("Instragram")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width:  24, height: 24)
+                        
+                        Spacer()
+                        
 
                     }
+                    .padding(.top, 20)
+                    .padding(.bottom, 20)
                 }
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
             }
             
         }.padding([.leading, .trailing], 20)

@@ -20,6 +20,7 @@
 		53F986BE2BB563F80024E60D /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F986BD2BB563F80024E60D /* FooterView.swift */; };
 		53F986C02BB564DE0024E60D /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F986BF2BB564DE0024E60D /* SideMenuView.swift */; };
 		53F986C22BB56E6B0024E60D /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F986C12BB56E6B0024E60D /* GenderView.swift */; };
+		53F986C42BB5911C0024E60D /* SideCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F986C32BB5911C0024E60D /* SideCartView.swift */; };
 		90B7C66F2BA8052F00CE7D88 /* Project_HansiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B7C66E2BA8052F00CE7D88 /* Project_HansiApp.swift */; };
 		90B7C6732BA8053000CE7D88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B7C6722BA8053000CE7D88 /* Assets.xcassets */; };
 		90B7C6762BA8053000CE7D88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B7C6752BA8053000CE7D88 /* Preview Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		53F986BD2BB563F80024E60D /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		53F986BF2BB564DE0024E60D /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		53F986C12BB56E6B0024E60D /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
+		53F986C32BB5911C0024E60D /* SideCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideCartView.swift; sourceTree = "<group>"; };
 		90B7C66B2BA8052F00CE7D88 /* Project Hansi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Hansi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B7C66E2BA8052F00CE7D88 /* Project_HansiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_HansiApp.swift; sourceTree = "<group>"; };
 		90B7C6722BA8053000CE7D88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				53F986BB2BB563E70024E60D /* SideView.swift */,
 				53F986BD2BB563F80024E60D /* FooterView.swift */,
 				53F986C12BB56E6B0024E60D /* GenderView.swift */,
+				53F986C32BB5911C0024E60D /* SideCartView.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				250229632BB3DF4600C2906C /* HeaderView.swift in Sources */,
+				53F986C42BB5911C0024E60D /* SideCartView.swift in Sources */,
 				2502296B2BB4134D00C2906C /* Product.swift in Sources */,
 				90B7C66F2BA8052F00CE7D88 /* Project_HansiApp.swift in Sources */,
 				250229712BB4233B00C2906C /* ProductIteamView.swift in Sources */,
