@@ -12,7 +12,7 @@ struct HomeView: View {
     @State var presentSideMenu = false
     @State var presentSideCart = false
     
-    private let categories = ["All", "Mens", "Womens", "Kids", "Blouse", "Trousers"]
+    private let categories = ["All", "Mens", "Womens", "Kids", "Tops", "Shorts"]
     @State private var selectedIndex: Int = 0
     
     var body: some View {
@@ -51,6 +51,7 @@ struct HomeView: View {
         }
         
     }
+    
     @ViewBuilder
     private func HeroImageView() -> some View {
         ZStack {
@@ -136,7 +137,7 @@ struct HomeView: View {
             .foregroundColor(Color.black)
         
         HStack {
-            Image("Collections 1")
+            Image("Collections 2")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 150, height: 200)
@@ -145,7 +146,7 @@ struct HomeView: View {
                 .clipped()
             
             
-            Image("Collections 2")
+            Image("Collections 4")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 150, height: 200)

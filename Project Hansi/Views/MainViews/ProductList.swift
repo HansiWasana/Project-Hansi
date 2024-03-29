@@ -22,12 +22,13 @@ struct ProductList: View {
                     VStack(spacing: 0){
                         HStack{
                             Text("PRODUCTS")
-                                .font(Font.custom("Tenor Sans", size: 20))
+                                .font(Font.custom("Tenor Sans", size: 15))
                                 .foregroundColor(.black)
                             
                             Spacer()
                         }
                         .padding()
+                        
                         ScrollView(.vertical) {
                             VStack{
                                 ScrollView(.vertical) {
@@ -49,7 +50,7 @@ struct ProductList: View {
                     }
                     .edgesIgnoringSafeArea(.all)
                 }
-                .padding(.top)
+                .padding(.top,46)
             }
             
                     
@@ -87,7 +88,7 @@ struct ProductList: View {
         }
     
 
-        struct ProductListView_Previews: PreviewProvider {
+struct ProductListView_Previews: PreviewProvider {
             static var previews: some View {
                ProductList()
                     
