@@ -23,3 +23,6 @@ var product6: Product = .init(title: "Casual Extend Sleeves Color Block Women Or
     
 //var tenorsans = Font.custom("Tenor Sans", size: 12)
 
+var cartItems: [CartItem] = [.init(product: product1, count: 1), .init(product: product2, count: 2), .init(product: product3, count: 1)]
+
+var Products: [Product] = [product1, product2, product3, product4, product5,product6]

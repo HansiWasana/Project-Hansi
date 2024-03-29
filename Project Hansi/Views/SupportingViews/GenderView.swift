@@ -16,16 +16,16 @@ struct GenderView: View {
             Text(title)
                 .font(Font.custom("Tenor Sans", size: 15))
                 .multilineTextAlignment(.center)
-                .foregroundColor(isSelected ? Color.orange: Color.Placeholder.opacity(0.9))
+                .foregroundColor(isSelected ? Color.black: Color.Placeholder.opacity(0.9))
             
             if isSelected {
                 ZStack{
                     Rectangle()
-                        .foregroundColor(Color.orange)
+                        .foregroundColor(Color.black)
                         .frame(height: 1)
                     
                     Rectangle()
-                        .foregroundColor(Color.orange)
+                        .foregroundColor(Color.black)
                         .frame(width: 5, height: 5)
                         .rotationEffect(Angle(degrees: 45))
                 }

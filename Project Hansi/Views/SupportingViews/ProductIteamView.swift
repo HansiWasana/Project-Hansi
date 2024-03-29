@@ -26,14 +26,16 @@ struct ProductIteamView: View {
                     
                     Text(product.title)
                         .font(Font.custom("Tenor Sans", size: 13))
-                        .multilineTextAlignment(.center)
+                        .multilineTextAlignment(.leading)
                         .foregroundColor(Color.gray)
                         .frame(width: 165, alignment: .top)
                     
                     
                     Text("$\(product.price)")
-                        .font(Font.custom("Tenor Sans", size: 22))
+                        .font(Font.custom("Tenor Sans", size: 16))
+                        .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                         .foregroundColor(Color.black)
+                        .frame(width: 165, alignment: .leading)
                         .padding(.top, 2)
                 }
             }

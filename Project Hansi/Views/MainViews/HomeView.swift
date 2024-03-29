@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @State var presentSideMenu = false
+    @State var presentSideCart = false
     
     private let categories = ["All", "Mens", "Womens", "Kids", "Blouse", "Trousers"]
     @State private var selectedIndex: Int = 0
@@ -17,36 +18,39 @@ struct HomeView: View {
     var body: some View {
         ZStack{
             Color.white.edgesIgnoringSafeArea(.all)
-            VStack(spacing: 0) {
-                ScrollView (.vertical){
-                    HeroImageView()
-                    NewArrivalView()
-                    Image("Brand")
-                        .resizable()
-                        .frame(height:  145, alignment: .top)
-                        .aspectRatio(contentMode: .fit)
-                    CollectionView()
-                    FooterView()
+            ZStack{
+                VStack(spacing: 0) {
+                    ScrollView (.vertical){
+                        HeroImageView()
+                        NewArrivalView()
+                        Image("Brand")
+                            .resizable()
+                            .frame(height:  145, alignment: .top)
+                            .aspectRatio(contentMode: .fit)
+                        CollectionView()
+                        //FooterView()
+                    }
+                    .padding(.top, 56)
                 }
-                .padding(.top, 56)
-            }
-            
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .overlay(alignment: .top){
-                HeaderView{
-                    presentSideMenu.toggle()
+                
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .overlay(alignment: .top){
+                    HeaderView {
+                        presentSideMenu.toggle()
+                        
+                    } cartAction: {
+                        presentSideCart.toggle()
+                    }
+                    
                 }
-            cartAction: {
-            }
+                
+                SideMenu()
+                SideCart()
                 
             }
-            
-            SideMenu()
-            
         }
+        
     }
-    
-    
     @ViewBuilder
     private func HeroImageView() -> some View {
         ZStack {
@@ -86,17 +90,17 @@ struct HomeView: View {
             .frame(width:  300, height: 1)
         
         ScrollView (.horizontal, showsIndicators: false) {
-                                    HStack {
-                                        ForEach(0 ..< categories.count) { i in
-                                            CategoryView(isSelected: i == selectedIndex, text: categories[i])
-                                                .onTapGesture {
-                                                    selectedIndex = i
-                                                    //navigate(selectedIndex: i)
-                                                }
-                                        }
-                                    }
-                                    .padding()
-                                }
+            HStack {
+                ForEach(0 ..< categories.count) { i in
+                    CategoryView(isSelected: i == selectedIndex, text: categories[i])
+                        .onTapGesture {
+                            selectedIndex = i
+                            //navigate(selectedIndex: i)
+                        }
+                }
+            }
+            .padding()
+        }
         
         HStack {
             ProductIteamView(product: product1)
@@ -148,7 +152,7 @@ struct HomeView: View {
                 .cornerRadius(8)
                 .shadow(radius: 1)
                 .clipped()
-           
+            
             
             
             
@@ -156,16 +160,19 @@ struct HomeView: View {
     }
     
     @ViewBuilder
-        private func SideMenu()-> some View {
-            SideView(isShowing: $presentSideMenu, content: AnyView(SideMenuViewContents(presenSideMenu: $presentSideMenu)), direction: .leading)
-            
-        }
+    private func SideMenu()-> some View {
+        SideView(isShowing: $presentSideMenu, content: AnyView(SideMenuViewContents(presenSideMenu: $presentSideMenu)), direction: .leading)
         
-        @ViewBuilder
-        private func SideCart()-> some View {
-            
-        }
+    }
+    
+    @ViewBuilder
+    private func SideCart()-> some View {
+        SideView(isShowing: $presentSideCart, content:
+                    AnyView(SideCartViewContents(presentSideMenu:$presentSideCart)), direction: .trailing)
+        
+    }
 }
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View{

@@ -7,54 +7,175 @@
 
 import SwiftUI
 
-struct SideCartView: View {
+struct SideCartViewTemp: View{
     @State var presentSideMenu = true
     
-    var body: some View {
+    var body: some View{
         ZStack{
             SideCartMenu()
+        }.background(.black)
+    }
+    
+    @ViewBuilder
+        private func SideCartMenu() -> some View {
+        SideView(isShowing: $presentSideMenu, content:
+                    AnyView(SideCartViewContents(presentSideMenu:$presentSideMenu)), direction: .trailing)
         }
-        .background(.black)
-    }
 
-            @ViewBuilder
-            private func SideCartMenu() -> some View {
-            //    SideView(isShowing: $presentSideMenu, content: AnyView(SideMenuViewContents(presenSideMenu: $presentSideMenu)), direction: .leading)
-                
-            }
 }
 
-struct SideCartViewTemp_Previews: PreviewProvider {
-    static var previews: some View {
-        SideCartView()
+struct SideCartViewTemp_Previews: PreviewProvider{
+    static var previews: some View{
+        SideCartViewTemp()
     }
 }
-
 
 struct SideCartViewContents: View {
     @Binding var presentSideMenu: Bool
-    @State private var totalPrice:Int = 0
+    @State private var totalPrice: Int = 0
     
     var body: some View {
+        VStack(alignment: .leading){
+            SideMenuTopView()
+                .padding([.leading, .trailing], 20)
+            
+            Text("CART")
+                .font(Font.custom("Tenor Sans", size: 20))
+                .foregroundColor(.black)
+                .padding([.leading, .trailing], 20)
+            
+            if cartItems.count > 0 {
+                CartFullView()
+            }else
+            {
+                EmptyCartView()
+            }
+            
+            
+            Button{
+
+                         }label: {
+                           HStack {
+                               Image(systemName: "bag")
+                                 .resizable()
+                                 .aspectRatio(contentMode: .fit)
+                                 .frame(width: 20, height: 20)
+                                 .colorInvert()
+                                 Text("Continue Shopping")
+                                   .font(Font.custom("Tenor Sans", size: 16))
+                                   .multilineTextAlignment(.center)
+                                   .foregroundColor(.white)
+                           }
+                           .frame(height: 80)
+                           .frame(maxWidth: .infinity)
+                           .background(.black)
+                         }
+                  }
+                  .onAppear {
+                   updateCartValue()
+                  }
+
+               }
+
+        
+    
+    @ViewBuilder
+    func SideMenuTopView() -> some View {
         VStack{
             HStack{
-                Button{
+                Button {
                     presentSideMenu.toggle()
                     
-                }label: {
-                Image("Close")
+                } label: {
+                    Image("close")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
-                .frame(width: 34, height: 34)
+                .frame(width: 25, height:  25)
+                
                 Spacer()
             }
-            
         }
-        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+        .frame(maxWidth: .infinity)
         .padding(.leading, 10)
         .padding(.top, 40)
         .padding(.bottom, 30)
+        
     }
     
-}
+    //This is show when cart is empty
+    @ViewBuilder
+    func EmptyCartView() -> some View {
+        VStack(alignment: .leading) {
+            Text("You have no items in your shopping Cart")
+                .font(Font.custom("Tenor Sans", size: 16))
+                .multilineTextAlignment(.center)
+                .foregroundColor(Color.Placeholder)
+        }
+        .frame(maxWidth: .infinity, maxHeight:.infinity)
+    }
+    
+    
+    @ViewBuilder
+    func CartFullView() -> some View {
+        VStack(alignment: .leading){
+            VStack {
+                ScrollView(.vertical){
+                    ForEach(0..<cartItems.count, id: \.self)
+                    {
+                        i in
+                        
+                        //checks item count of products
+                        
+                        if cartItems[i].count > 0 {
+                            CartItemView(item: cartItems[i]) {
+                                
+                            }
+                        }
+                    }
+                }.padding([.leading, .trailing], 20)
+                
+                VStack{
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(height: 1)
+                        .background(Color.gray)
+                    
+                    HStack{
+                        Text("SUB TOTAL")
+                            .font(Font.custom("Tenor Sans", size: 14))
+                            .foregroundColor(.gray)
+                        
+                        Spacer()
+                        
+                        Text("$\(totalPrice)")
+                            .font(Font.custom("Tenor Sans", size: 22))
+                            .foregroundColor(Color.black)
+                        
+                    }
+                          .padding([.leading, .trailing],20)
+                    
+                                          Text("shipping charges, teaxes and discount codes are calculate at the time of accounting.")
+                                                    .font(Font.custom("Tenor Sans", size: 12))
+                                                    .foregroundColor(.gray)
+                                                    .frame(height:72, alignment: .topLeading)
+                                                    .padding([.leading, .trailing], 20)
+
+                                          }  .frame(height: 100)
+                
+                                      } .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+                                  }.frame(maxWidth: .infinity, maxHeight: .infinity)
+                              }
+                              
+    
+    func updateCartValue() {
+        print("\(totalPrice)")
+          var value: Int = 0
+          for item in cartItems {
+              value += (item.count * item.product.price)
+          }
+          totalPrice = value
+      }
+
+  }

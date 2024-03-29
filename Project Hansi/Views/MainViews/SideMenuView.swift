@@ -143,11 +143,11 @@ struct SideMenuViewContents: View {
                     presenSideMenu.toggle()
                     
                 }label: {
-                    Image("Close")
+                    Image("close")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
-                .frame(width: 34, height: 34)
+                .frame(width: 25, height: 25)
                     Spacer()
                 }
             }
