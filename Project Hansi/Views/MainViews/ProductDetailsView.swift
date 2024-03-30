@@ -13,30 +13,35 @@ struct ProductDetailsView: View {
     
     var product:Product
     
-    private let categories = ["All", "Mens", "Womens", "Kids", "Blouse", "Trousers"]
+   // private let categories = ["All", "Mens", "Womens", "Kids", "Blouse", "Trousers"]
     @State private var selectedIndex: Int = 0
     
     var body: some View {
+        NavigationView{
         ZStack{
+            
             Color.white.edgesIgnoringSafeArea(.all)
             ZStack{
                 VStack(spacing: 0) {
-                    ScrollView{
-                        TabView{
-                            ForEach(0..<product.images
-                                .count, id: \.self) { i in
-                                    Image(product.images[i])
-                                    
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(height: 500)
-                                        .clipped()
-                                }
+                    ScrollView {
+                        TabView {
+                            ForEach(0..<product.images.count, id: \.self) { i in
+                                Image(product.images[i])
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(height: 500) // Adjust the height as needed
+                            }
                         }
-                        .tabViewStyle(.page)
-                        .indexViewStyle(
-                            .page(backgroundDisplayMode: .always))
-                        .padding([.leading, .trailing], 20)
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always)) // Add this line
+                        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always)) // Add this line
+                        .frame(height: 500) // Adjust the height as needed
+                    
+
+                        .padding(.top, 20)
+                        //.tabViewStyle(.page)
+                       // .indexViewStyle(
+                           // .page(backgroundDisplayMode: .always))
+                       // .padding([.leading, .trailing], 10)
                         
                         VStack(alignment: .leading) {
                             HStack(alignment: .top) {
@@ -111,32 +116,59 @@ struct ProductDetailsView: View {
                                 
                             }
                             
-                                
+                            
                             
                             
                         }
-                    
+                        
                     }
                     
                     .padding(.top, 56)
                 }
-                
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .overlay(alignment: .top){
-                    HeaderView {
-                        presentSideMenu.toggle()
-                        
-                    } cartAction: {
-                        presentSideCart.toggle()
-                    }
+            }
+            
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .overlay(alignment: .top){
+                HeaderView {
+                    presentSideMenu.toggle()
                     
+                } cartAction: {
+                    presentSideCart.toggle()
                 }
                 
-                SideMenu()
-                SideCart()
-                
             }
+            
+               
+                    NavigationLink{
+                        CheckoutView()
+                    }label: {
+                        HStack{
+                           
+                            Text("Add to Basket")
+                                .font(Font.custom("Tenor Sans", size: 17))
+                                .kerning(0.14)
+                                .multilineTextAlignment(.center)
+                                .foregroundStyle(.white)
+                            
+                            
+                            
+                        }
+                        .padding([.leading, .trailing], 26)
+                    }
+                    .frame(height: 46)
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .background(.black)
+                    .padding(.top, 720)
+                    
+                    SideMenu()
+                    SideCart()
+                }
+                
+            
         }
+            
+            .navigationBarHidden(true)
+            .ignoresSafeArea(edges: .bottom)
         
     }
     

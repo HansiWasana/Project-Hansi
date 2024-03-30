@@ -131,9 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				250229672BB40DCE00C2906C /* Extensions */,
-				2502295A2BB3DDE400C2906C /* Constants.swift */,
-				2502295C2BB3DDF200C2906C /* Enums.swift */,
-				250229642BB3E4BC00C2906C /* typealiases.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -176,6 +173,9 @@
 		250229672BB40DCE00C2906C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				250229642BB3E4BC00C2906C /* typealiases.swift */,
+				2502295C2BB3DDF200C2906C /* Enums.swift */,
+				2502295A2BB3DDE400C2906C /* Constants.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

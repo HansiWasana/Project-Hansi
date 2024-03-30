@@ -10,6 +10,9 @@ import SwiftUI
 struct CartItemView: View {
     
     @State var item: CartItem
+    
+    @State private var totalPrice: Int = 0
+    
     var onCartCountValueChanged: () -> ()
     
     var body: some View {

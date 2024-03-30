@@ -32,6 +32,7 @@ struct SideCartViewTemp_Previews: PreviewProvider{
 
 struct SideCartViewContents: View {
     @Binding var presentSideMenu: Bool
+    
     @State private var totalPrice: Int = 0
     
     var body: some View {
@@ -51,28 +52,28 @@ struct SideCartViewContents: View {
                 EmptyCartView()
             }
             
-            
-            Button{
-
-                         }label: {
-                           HStack {
-                               Image(systemName: "bag")
-                                 .resizable()
-                                 .aspectRatio(contentMode: .fit)
-                                 .frame(width: 20, height: 20)
-                                 .colorInvert()
-                                 Text("Continue Shopping")
-                                   .font(Font.custom("Tenor Sans", size: 16))
-                                   .multilineTextAlignment(.center)
-                                   .foregroundColor(.white)
-                           }
-                           .frame(height: 80)
-                           .frame(maxWidth: .infinity)
-                           .background(.black)
-                         }
+            NavigationLink{
+                CheckoutView()
+            }label: {
+                HStack {
+                    Image(systemName: "bag")
+                      .resizable()
+                      .aspectRatio(contentMode: .fit)
+                      .frame(width: 20, height: 20)
+                      .colorInvert()
+                      Text("Continue Shopping")
+                        .font(Font.custom("Tenor Sans", size: 16))
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                }
+                .frame(height: 80)
+                .frame(maxWidth: .infinity)
+                .background(.black)
+            }
+        
                   }
                   .onAppear {
-                   updateCartValue()
+                 updateCartValue()
                   }
 
                }
@@ -175,7 +176,7 @@ struct SideCartViewContents: View {
           for item in cartItems {
               value += (item.count * item.product.price)
           }
-          totalPrice = value
+        totalPrice = value
       }
 
   }

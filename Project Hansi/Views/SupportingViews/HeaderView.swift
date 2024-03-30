@@ -22,18 +22,23 @@ struct HeaderView:View {
                     menuAction()
                 } label: {
                     Image(systemName: "line.horizontal.3")
-
-                    .imageScale(.large)
-                    .padding()
+                    
+                        .imageScale(.large)
+                        .padding()
                     //.frame(width: 50,height: 70)
                     //.overlay(RoundedRectangle(cornerRadius: 50).stroke().opacity(0.4))
-                
+                   
+                    NavigationLink {
+                        HomeView()
+                    }label: {
+                        
+                    }
+                    Text("Dock's N Dazzle")
+                        .font(Font.custom("Tenor Sans", size: 20))
+                        .padding(.trailing)
+                        .foregroundColor(.black)
             }
-                .padding()
                 
-                Text("Dock's N Dazzle")
-                    .font(Font.custom("Tenor Sans", size: 20))
-                    .padding(.trailing)
                 
                 
                 Button {
